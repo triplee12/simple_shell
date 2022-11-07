@@ -24,28 +24,86 @@ int _strcmp(char *s1, char *s2)
 }
 
 /**
- * _strcpy - copies one string into another
- * @str1: First string, copied into
- * @str2: Second string, copied from
- * @s: Integer size of first strings memory in bytes.
+ * _strcpy - copie a string from source to destination
+ * @source: the string source
+ * @dest: the string destination
  *
- * Return: 1 if the copy succeeded or 0 if it failed.
+ * Return: the pointer to dest
  */
 
-int _strcpy(char *str1, char *str2, int s)
+char *_strcpy(char *dest, char *source)
 {
-	int i = 0, j = 0;
+	int i;
 
-	while (str2[j])
-		j++;
-
-	if (j < s)
+	for (i = 0; source[i] != '\0'; i++)
 	{
-		while (str2[i])
-			str1[i] = str2[i];
-		str1[i] = '\0';
-		return (0);
+		dest[i] = source[i];
 	}
+	dest[i] = '\0';
+	return (dest);
+}
 
-	return (1);
+/**
+ * _isalpha - check if the input is a letter
+ * @c: the character to be checked
+ *
+ * Return: 1 if letter, 0 otherwise
+ */
+
+int _isalpha(int c)
+{
+	if ((c >= 65 && c <= 90) || (c >= 97 && c <= 122))
+	{
+		return (SUCCESS);
+	}
+	return (FAIL);
+}
+
+/**
+ * _strcat - concatenates two string in a path form
+ * @first: the first given destination
+ * @second: the second given source
+ *
+ * Return: (Success) to the newly string
+ * ------- (Fail) if it failed
+ */
+
+char *_strcat(char *first, char *second)
+{
+	int len1, len2, i = 0, j = 0;
+	char *result;
+
+	len1 = _strlen(first);
+	len2 = _strlen(second);
+	result = malloc((len1 + len2 + 2) * sizeof(char));
+	if (!result)
+		return (NULL);
+	*result = '\0';
+	while (first[j])
+		result[i++] = first[j++];
+	result[i++] = '/';
+	j = 0;
+	while (second[j])
+		result[i++] = second[j++];
+	result[i] = '\0';
+	return (result);
+}
+
+/**
+ * _strlen - finds the length of a given string
+ * @str: the given string
+ *
+ * Return: (Success) the length of the string
+ * ------- (Fail) negative value
+ */
+
+int _strlen(char *str)
+{
+	char *ptr;
+
+	if (str == NULL)
+		return (-1);
+	for (ptr = str; *ptr; ptr++)
+		;
+	return (ptr - str);
 }
