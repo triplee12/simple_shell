@@ -8,12 +8,25 @@
 void execute(char **args)
 {
 	/* Execute the command using execve or execvp function */
-	if (strcmp(args[0], "cd") == 0)
+	if (_strcmp(args[0], "cd") == 0)
 	{
 		if (chdir(args[1]) == -1)
 			perror("Error");
 	}
-	else if (strcmp(args[0], "exit") == 0)
+	else if (_strcmp(args[0], "env") == 0)
+	{
+		char *dup = getenv("PATH");
+		char *s = dup;
+		char *p = NULL;
+		do {
+			p = strtok(s, ":");
+			if (p != NULL)
+				p[0] = 0;
+			printf("%s\n", s);
+			s = p + 1;
+		} while (p != NULL);
+	}
+	else if (_strcmp(args[0], "exit") == 0)
 		exit(0);
 	else
 	{
