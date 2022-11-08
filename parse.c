@@ -1,8 +1,8 @@
 #include "main.h"
 
 /**
- * is_path_form - chekc if the given fikenname is a path
- * @data: the data strucct pointer
+ * is_path_form - checks if the given filename is a path
+ * @data: the data struct pointer
  *
  * Return: (Success)
  * ------- (Fail) otherwise
@@ -20,8 +20,8 @@ int is_path_form(sh_t *data)
 
 #define DELIMITER ":"
 /**
- * is_short_form - chekc if the given fikenname is short form
- * @data: the data strucct pointer
+ * is_short_form - check if the given filename is short form
+ * @data: the data struct pointer
  *
  * Return: (Success)
  * ------- (Fail) otherwise
