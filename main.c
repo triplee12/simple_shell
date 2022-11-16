@@ -44,7 +44,6 @@ int main()
 			print_error(&data);
 			break;
 		}
-		free_data(&data);
 	}
 	free_data(&data);
 
