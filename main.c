@@ -12,7 +12,7 @@ int main()
 	sh_t data;
 	int pl;
 
-	memset(&data, 0, sizeof(data));
+	_memset(&data, 0, sizeof(data));
 	signal(SIGINT, signal_handler);
 	while (true)
 	{
