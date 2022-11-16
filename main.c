@@ -6,7 +6,7 @@
  * Return: 0 on success
  */
 
-int main()
+int main(void)
 {
 	/* main function with while loop of our shell */
 	sh_t data;
@@ -49,3 +49,4 @@ int main()
 
 	return (0);
 }
+

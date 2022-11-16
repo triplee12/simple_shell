@@ -121,3 +121,4 @@ int write_history(sh_t *data __attribute__((unused)))
 	}
 	return (1);
 }
+

@@ -39,3 +39,4 @@ char *_strdup(char *str)
 	_strcpy(dupl, str);
 	return (dupl);
 }
+

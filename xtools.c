@@ -106,3 +106,4 @@ void index_cmd(sh_t *data)
 {
 	data->index += 1;
 }
+
