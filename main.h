@@ -21,7 +21,7 @@ extern char **environ;
 #define BUFSIZE 256
 #define TOKENSIZE 64
 #define PRINT(c) (write(STDOUT_FILENO, c, _strlen(c)))
-#define PROMPT "#:)-$ "
+#define PROMPT "$ "
 #define SUCCESS (1)
 #define FAIL (-1)
 #define NEUTRAL (0)
@@ -80,7 +80,7 @@ char *_strchr(char *str, char c);
 
 /* ----------Memory prototype------------*/
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
-char *_memset(char *s, char byt, unsigned int n);
+void *_memset(void *s, int c, unsigned int n);
 char *_memcpy(char *dest, char *src, unsigned int n);
 int free_data(sh_t *);
 
